@@ -10,7 +10,7 @@ before_install:
   - docker build -t bpeak/docker-test -f Dockerfile.dev .
 
 script:
-  - echo "script...!"
+  - docker run -e CI=true bpeak/docker-test npm run test
 
 after_success:
-  - echo "success...!"
+  - echo "test success...!"
