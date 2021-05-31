@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start test...!"
+  - docker build -t bpeak/docker-test -f Dockerfile.dev .
+
+script:
+  - echo "script...!"
+
+after_success:
+  - echo "success...!"
